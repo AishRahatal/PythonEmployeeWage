@@ -65,7 +65,31 @@ class Employee:
         except Exception as e:
             print("Error :",e)  
 
-            
+    def part_time(self):
+        """"
+        Description: calculate wage for part time,
+        hours of part time for day hour is 4 and per hour rate is 20
+        Parameter: self
+        Return: none
+        """
+       #try block contains operations
+        try:
+            # setting rate per hour is 20            
+            rate_per_hour= 20
+            part_time=1    
+            #if emloyee is full time then set hours =8
+            if part_time:
+                    #hours for a day
+                    hours = 4
+                    #declare wage as protected variable
+                    _wage = hours * rate_per_hour
+                    print("Employee daily part time wage: " ,_wage)
+                    print()            
+            else:
+                print("Employee is not part time ")            
+        except Exception as e:
+            print("Error :",e)  
+
 # main for function call.
 if __name__ == "__main__": 
 
@@ -81,6 +105,7 @@ if __name__ == "__main__":
             print("---Menu----")
             print("1. Attendance")
             print("2. Daily wage")
+            print("3. Part time wage") 
             print("0. Exit")
             print("----------------")
             choice=int(input("Enter choice :"))
@@ -89,11 +114,12 @@ if __name__ == "__main__":
                 case 1:
                     e.attendance()
                 case 2:
-                    e.daily_wage()     
+                    e.daily_wage()
+                case 3:
+                    e.part_time()       
                 case default:
-                    print("please enter value between 1 and 2")    
-                    print()
-            
+                    print("please enter value between 1 and 3")    
+            print()
     except:
          print("Entered wrong value") 
 
