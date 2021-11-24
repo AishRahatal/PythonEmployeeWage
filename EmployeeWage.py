@@ -40,6 +40,32 @@ class Employee:
         except Exception as e:
             print("Error :",e)
 
+    def daily_wage(self):
+        """"
+        Description: checking  employee present and full time then calculating a day wage,
+        using hours for day is 8 and per hour rate is 20
+        Parameter: self
+        Return: none
+        """
+        #try block contains operations
+        try:
+            # setting rate per hour is 20            
+            rate_per_hour= 20
+            full_time=1    
+            #if emloyee is full time then set hours =8
+            if full_time:
+                    #hours for a day
+                    hours = 8
+                    #declare wage as protected variable
+                    _wage = hours * rate_per_hour
+                    print("Employee daily wage: " ,_wage)
+                    print()            
+            else:
+                print("Employee is not full time ")            
+        except Exception as e:
+            print("Error :",e)  
+
+            
 # main for function call.
 if __name__ == "__main__": 
 
@@ -54,16 +80,20 @@ if __name__ == "__main__":
             #menu 
             print("---Menu----")
             print("1. Attendance")
+            print("2. Daily wage")
             print("0. Exit")
             print("----------------")
             choice=int(input("Enter choice :"))
             #match case to choose function call
             match choice:
                 case 1:
-                    e.attendance()   
+                    e.attendance()
+                case 2:
+                    e.daily_wage()     
                 case default:
-                    print("please enter value between 1")    
-                    print()        
+                    print("please enter value between 1 and 2")    
+                    print()
+            
     except:
          print("Entered wrong value") 
 
