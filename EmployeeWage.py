@@ -152,8 +152,44 @@ class Employee:
                     print("Employee daily Wage for part time for a month : " ,_mwage)
                     print()
         except Exception as e:
+            print("Error :",e) 
+
+    def hundred_days_wage(Self):
+        """"
+        Description: calculate wage for fulltime and part time for a month
+        using hours for day is 8 and part time hour is 4 and per hour rate is 20
+        and no of working days are 100
+        Parameter: self
+        Return: none
+        """
+        rate_per_hour = 20
+        working_day=100
+        full_time=1
+        part_time=2
+        time=random.randint(1,2) 
+        try: 
+            match time:
+            # if value of full_time is 1 then emplyee is full time
+                case time if time==full_time :
+                    #hours for a day
+                    hours = 8
+                    #declare _dwage for daily wage and _wage for monthly wage as protected variable
+                    _dwage = hours * rate_per_hour 
+                    _wage= _dwage*working_day
+                    print("Employee daily Wage for full time for hundred days : " ,_wage)
+                    print()
+                    # if value of full_time is 2 then emplyee is part time   
+                case time if time==part_time:
+                    #hours for part time for a day
+                    hours = 4
+                    _dwage = hours * rate_per_hour 
+                    _wage= _dwage*working_day
+                    print("Employee daily Wage for part time for hundred days : " ,_wage)
+                    print()
+        except Exception as e:
             print("Error :",e)                    
-            
+
+
 # main for function call.
 if __name__ == "__main__": 
 
@@ -188,8 +224,10 @@ if __name__ == "__main__":
                     e.switch_case()
                 case 5:
                     e.monthly_wage()
+                case 6:
+                    e.hundred_days_wage()
                 case default:
-                    print("please enter choice between 1 and 5")
+                    print("please enter choice between 1 and 6")
                     print()    
     except:         
          print("Entered wrong value") 
